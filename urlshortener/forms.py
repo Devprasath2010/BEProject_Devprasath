@@ -8,6 +8,6 @@ class url_form(forms.ModelForm):
 
         widgets = {
             'original_url': forms.TextInput(attrs={
-                'placeholder': 'Paste Your Long URL and Short it',
+                'placeholder': 'https://example.com',
             })
         }

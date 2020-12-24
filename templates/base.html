@@ -16,45 +16,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-    
-    <style>
-             #footer {
-            position: absolute;
-            bottom: 35vh;
-            width: 100%;
-            height: 4.0rem;
-            /* Footer height */
-        }
-    </style>
+
 </head>
 <body>
     <div class="page-container">
-        <ul class="nav justify-content-center m-2">
-            <li class="nav-item">
-                <a class="nav-link btn btn-outline-primary m-2" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link btn btn-outline-warning m-2" href="/create">Create URL</a>
-            </li>
-        </ul>
-        <br/>
         {% block content %}
 
         {% endblock content %}
-        <footer id="footer">
-                <center>
-                    {% if obj %}
-                        <h5 class="mb-2">Recent URLShort</h5>
-                        {% for o in obj %}
-                            <div class="alert alert-secondary" role="alert">
-                                <a href="http://127.0.0.1:8000/url/{{ o.shorten_url }}" class="mb-1">http://127.0.0.1:8000/url/{{ o.shorten_url }}</a>
-                                <h6>Original Link: {{ o.original_url }}</h6>
-                                <legend>{{ o.visited }} Visits</legend>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                </center>
-        </footer>      
     </div>
 </body>
 </html>
